@@ -1,0 +1,609 @@
+@font-face {
+    font-family: "AnonymousPro regular";
+    src: url("../fonts/Anonymous_Pro/AnonymousPro-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Rubik regular";
+    src: url("../fonts/Rubik/static/Rubik-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Rubik medium";
+    src: url("../fonts/Rubik/static/Rubik-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Rubik bold";
+    src: url("../fonts/Rubik/static/Rubik-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Jost light";
+    src: url("../fonts/Jost/static/Jost-Light.ttf") format("truetype");
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Jost regular";
+    src: url("../fonts/Jost/static/Jost-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+$black: rgb(0, 0, 0);
+$orange: #FF7913;
+$white: #FFFFFF;
+$crimson: #DA0463;
+$yellow: #FFDB4F;
+
+%textJost-Light {
+    font-family: "Jost light";
+    font-weight: 300;
+    color: $black;
+    line-height: 184.238%;
+}
+%titleRubik-Medium {
+    font-family: "Rubik medium";
+    color: $black;
+    font-weight: 500;
+}
+%titleRubik-Bold {
+    font-family: "Rubik bold";
+    color: $orange;
+    font-weight: 700;
+}
+
+%button-main {
+    padding: 15px 52px;
+    @extend %titleRubik-Medium;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 16px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: white;
+}
+
+.container {
+    width: 1440px;
+    margin: 0 auto;
+}
+.header {
+    height: 147px;
+    display: flex;
+    align-items: center;
+}
+.main-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 271px;
+    &_wrapper {
+        list-style-type: none;
+    }
+    &_link {
+        text-decoration: none;
+        font-family: "AnonymousPro regular";
+        font-weight: 400;
+        color: $black; 
+    }
+    &_section {
+        display: flex;
+        width: 231px;
+        justify-content: space-between;
+    }
+}
+.main-menu_info .main-menu_list:nth-child(2) {
+    margin-top: 30px;
+}
+.main-menu_info .main-menu_list {
+    font-size: 20px;
+}
+.main-menu_section .main-menu_link {
+    font-size: 24px;
+}
+.section-slider {
+    &_slider {
+        width: 100%;
+        overflow: hidden;
+        position: relative; 
+        height: 538px;
+    }
+    &_slider-line {
+        width: 5760px;
+        height: 538px;
+        display: flex;
+        position: relative;
+        left: 0;
+        transition: all ease 0.5s;
+    }
+    &_scroll {
+        position: relative;
+        width: 1810px;
+        display: flex;
+        justify-content: space-between;
+        margin: -285px auto 0 auto;
+        z-index: 1;
+    }
+
+    &_button-left,
+    &_button-right {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    &_advertisement-boxs {
+        display: flex;
+    }
+    &_img {
+        display: block;
+    }
+    &_advertisement-box-text {
+        z-index: 3;
+        width: 925px;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        margin-right: 240px;
+    }
+    &_advertisement-box {
+        position: relative;
+    }
+    &_title {
+        font-family: "Rubik regular";
+        font-weight: 400;
+        color: $white; 
+        width: 925px;
+        text-align: right;
+        font-size: 80px;
+        float: right;
+        margin-bottom: 25px;
+    }
+    &_text {
+        @extend %textJost-Light;
+        color: $white; 
+        width: 841px;
+        text-align: right;
+        font-size: 26px;
+        font-weight: 300;
+        float: right;
+    }
+}
+.hits {
+    margin-top: 100px;
+    margin-bottom: 84px;
+    &_title {
+        margin-bottom: 100px;
+        @extend %titleRubik-Medium;
+        font-size: 36px;
+        text-align: center;
+    }
+    &_boxs {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    &_box {
+        background: url("../image/bg/bg_for_cards.png") no-repeat;
+        background-position: center center;
+        width: 310px;
+        border-radius: 22px;
+        height: 432px;
+        margin-bottom: 20px;
+        margin-right: 50px;
+    }
+    &_box:hover {
+        background: url("../image/bg/bg_for_cards_hover.png") no-repeat;
+    }
+    &_price {
+        @extend %textJost-Light;
+        font-size: 22px;
+        margin: 15px 0px 0px 25px;
+    }
+    &_price-bold {
+        font-family: "Jost regular";
+        font-weight: 400;
+        font-size: 26px;
+    }
+    &_name-product {
+        @extend %titleRubik-Bold;
+        width: 210px;
+        text-align: center;
+        font-size: 20px;
+        line-height: 140.422%;
+        margin: 10px auto 20px auto;
+    }
+    &_button-more {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        @extend %button-main;
+        border-radius: 0%;
+        background: $white;
+        border: 1px solid; 
+        border-image: linear-gradient(to right, #FF791300, #FF7913) 1;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    &_button-more:hover {
+        background: $orange;
+        color: $white;
+    }
+    &_button {
+        @extend %button-main;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        border: none;
+        background: $orange;
+        color: $white;
+        margin-top: 80px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    &_button:hover {
+        background: $yellow;
+        color: $black;
+    }
+}
+.hits_box img {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: auto;
+    height: 209px;
+}
+.about-as {
+    background: url("../image/bg/bg_for_about_us.png") no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: auto;
+    margin-bottom: 105px;
+    &_boxs {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 102px 0px;
+    }
+    &_image {
+        border-radius: 22px;
+    }
+    &_title {
+        @extend %titleRubik-Medium;
+        text-align: right;
+        font-size: 36px;
+    }
+    &_text {
+        @extend %textJost-Light;
+        font-size: 22px;
+        text-align: right;
+        width: 574px;
+        margin-top: 60px;
+    }
+}
+
+.consultation-form {
+    &_box {
+        width: 1440px;
+        height: 503px;
+        background: url("../image/bg/bg_for_consultation.png") no-repeat;
+        background-position: center center;
+        background-size: cover;
+        border-radius: 22px;
+    }
+    &_main {
+        padding: 92px 125px 93px 125px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &_title {
+        @extend %titleRubik-Medium;
+        color: $white;
+        font-size: 42px;
+        line-height: 59.1px;
+        margin-bottom: 34px;
+    }
+    &_text-box {
+        width: 524px;
+    }
+    &_text {
+        @extend %textJost-Light;
+        font-size: 20px;
+        color: $white;
+    }
+    &_input-box input {
+        width: 481px;
+        height: 53px;
+        border-radius: 15px;
+        background-color: $white;
+        border: none;
+        @extend %textJost-Light;
+        font-size: 18px;
+        line-height: normal;
+        color: $black;
+        padding-left: 10px;
+    }
+    &_input-box ::placeholder{
+        padding-left: 35px;
+        @extend %textJost-Light;
+        color: rgba(0, 0, 0, 0.60);
+        font-size: 18px;
+        line-height: normal;
+    }
+    &_formbox {
+        width: 491px;
+    }
+    &_personal-data input {
+        width: 25px;
+        height: 25px;
+        background-color: $white;
+        border: 1.5px solid #000;
+        border-radius: 0%;
+    }
+    &_personal-data label {
+        @extend %textJost-Light;
+        line-height: normal;
+        font-size: 14px;
+        margin-left: 12px;
+    }
+    &_personal-data {
+        display: flex;
+        align-items: center;
+        margin: 18px 0 23px 0;
+    }
+    &_personal-data-button {
+        padding: 17px 147px;
+        border-radius: 18px;
+        background-color: $orange;
+        color: $white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    &_personal-data-button-text {
+        @extend %titleRubik-Medium;
+        color: $white;
+        font-size: 16px;
+        transition: color 0.3s;
+    }
+    &_personal-data-button:hover {
+        background-color: $yellow;
+    }
+    &_personal-data-button-text:hover {
+        color: $black;
+    }
+}
+.consultation-form_input-box input:nth-child(2) {
+    margin: 20px 0;
+}
+.footer {
+    margin-top: 210px;
+    width: 100%;
+    height: 201px;
+    background: url("../image/bg/bg_for_footer.png") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    &_main {
+        height: 201px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &_main-wrapper {
+        list-style-type: none;
+    }
+    &_main-link {
+        text-decoration: none;
+    }
+    &_main-wrapper-logo {
+        width: 110.269px;
+        height: 97px;
+    }
+    &_main-list {
+        font-family: "AnonymousPro regular";
+        font-weight: 400;
+        font-size: 16px;
+    }
+    &_main-wrapper-apps {
+        display: flex;
+        width: 152px;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.footer_main-wrapper-info li:nth-child(2) {
+    margin: 12px 0;
+}
+
+/* page two */
+.history-company {
+    width: 100%;
+    height: 538px;
+    background: url("../image/bg/bg_for_history_company.png") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &_box {
+        width: 1055px;
+        height: 408px;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.60);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &_main {
+        width: 827px;
+    }
+    &_title {
+        @extend %titleRubik-Medium;
+        text-align: center;
+        font-size: 36px;
+    }
+    &_text {
+        @extend %textJost-Light;
+        font-size: 22px;
+        text-align: center;
+        margin-top: 45px;
+    }
+}
+.owner-history {
+    margin: 130px auto 125px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &_image {
+        border-radius: 22px;
+    }
+    &_title {
+        @extend %titleRubik-Medium;
+        text-align: right;
+        font-size: 36px;
+    }
+    &_text {
+        @extend %textJost-Light;
+        font-size: 22px;
+        text-align: right;
+        width: 574px;
+        margin-top: 60px;
+    }
+}
+.how-we-work {
+    &_title {
+        @extend %titleRubik-Medium;
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 80px;
+    }
+    &_stage-box{
+        width: 663px;
+        height: 317px;
+        background: url("../image/bg/bg_for_stages.png") no-repeat;
+        background-position: center center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &_stage-box-text {
+        text-align: center;
+    }
+    &_stage-title {
+        @extend %titleRubik-Bold;
+        font-size: 24px;
+        color: $orange;
+        margin-bottom: 33px;
+    }
+    &_stage-text {
+        width: 513px;
+        @extend %textJost-Light;
+        font-size: 20px;
+    }
+    &_image {
+        border-radius: 0px 0px 22px 22px;
+    }
+    &_boxs-stages {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+.how-we-work_box-stage:nth-child(1),
+.how-we-work_box-stage:nth-child(2) {
+  margin-bottom: 50px;
+}
+.products {
+    margin-top: 83px;
+    &_button-box {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        width: 1440px;
+    }
+    &_button {
+        @extend %button-main;
+        border: none;
+        background: $yellow;
+        color: $white;
+        margin-bottom: 30px;
+        transition: background-color 0.3s;
+    }
+    &_results-box {
+        margin-top: 105px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    &_box-card {
+        background: url("../image/bg/bg_for_cards.png") no-repeat;
+        background-position: center center;
+        width: 310px;
+        border-radius: 22px;
+        height: 432px;
+        margin-bottom: 20px;
+        margin-right: 50px;
+    }
+    &_box-card:hover {
+        background: url("../image/bg/bg_for_cards_hover.png") no-repeat;
+    }
+    &_price {
+        @extend %textJost-Light;
+        font-size: 22px;
+        margin: 15px 0px 0px 25px;
+    }
+    &_price-bold {
+        font-family: "Jost regular";
+        font-weight: 400;
+        font-size: 26px;
+    }
+    &_name-product {
+        @extend %titleRubik-Bold;
+        width: 235px;
+        text-align: center;
+        font-size: 20px;
+        line-height: 140.422%;
+        margin: 10px auto 20px auto;
+    }
+    &_button-more {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        @extend %button-main;
+        border-radius: 0%;
+        background: $white;
+        border: 1px solid; 
+        border-image: linear-gradient(to right, #FF791300, #FF7913) 1;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    &_button:hover {
+        background-color: $crimson;
+    }
+    &_button-more:hover {
+        background-color: $orange;
+        color: $white;
+    }
+}
+.products_button:not(:nth-last-child(2)) {
+    margin-right: 49px;
+}
+.products_button:last-child {
+    margin-bottom: 0;
+}
+.products_box-card img {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: auto;
+    height: 209px;
+}
